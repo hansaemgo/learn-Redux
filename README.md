@@ -1,68 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Learn Redux
 
-## Available Scripts
+### 1. 리덕스에서 사용되는 키워드 숙지하기
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. 액션(Action) 
+   - 상태에 어떤 변화가 필요할때 액션 발생 시키며 하나의 객체로 표현된다.
+   - type값은 필수적으로 가지고 있어야 한다. 
+   - 업데이트를 해야할때 어떻게 업데이트를 해야할지 정의하는 함수
+2. 액션 생성함수(Action Creator)
+    - 액션을 만드는 함수 파라미터를 받아와서 액션객체 형태로 만들어준다.
+    - 화살표 함수로도 만들 수 있다
+3. 리듀서(Reducer)
+    - 변화를 일으키는 함수로 두가지 파라미터를 가져온다 (state, action)
+    - 불변성을 유지해 줘야 한다. 
+    - 리덕스의 default 부분은 기존 state를 그대로 반환하도록 작성한다.
+    - 상태를 바꿔주는 함수
+4. 스토어(Store)
+    - 한 애플리케이션당 하나의 스토어를 만들게 된다.
+    - 현재의 앱 상태와 리듀서가 들어가있으며 추가적 내장함수가 몇가지 있다.
+        1. 디스패치(Dispatch) 
+            - 액션을 발생시키는 것, 액션을 스토어에게 전달해 주는 것 
+            - dispatch(action) 형태로 액션을 파라미터로 전달
+        2. 구독 (Subscribe)
+            - 스토어의 내장 함수 중 하나 
+            - 디스패치로 액션이 발생되서 상태가 업데이트 되었을때 특정함수를 호출시킬 수 있다.
