@@ -73,3 +73,13 @@
             - const store = createStore(rootReducer); 스토어 만들기
             - index.js 에서 Provider불러와서 App컴포넌트 감싸기
             - Props 는 store <Provider store={store}><App /></Provider>
+
+### 5. 카운터 구현하기
+
+1. 프레젠테이셔털 컴포넌트
+    - 리덕스 스토어에 직접적으로 접근하지 않고 필요한 값 또는 함수를 Props로만 받아와서 사용하는 컴포넌트
+    - Counter 컴포넌트 (e.target.value 의 타입은 문자열이기 때문에 숫자로 변환)
+    - 프레젠테이셔널 컴포넌트에서는 주로 UI선언하는 것에 집중 필요한 값이나 함수는 Props로 방아와서 사용하는 형태로 구현
+2. 컨테이너 컴포넌트
+    - 리덕스 스토어의 상태를 조회하거나 액션을 디스패치 할 수 있는 컴포넌트 의미
+    - HTML 태그 사용하지 않고 다른 프레젠테이셔널 컴포넌트 불러와서 사용
