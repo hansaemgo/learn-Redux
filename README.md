@@ -32,3 +32,26 @@
     - 똑같은 파라미터로 호출된 리듀서 함수는 똑같은 결과값을 반환해야 한다.
     - 사용 불가능 [ new Date(), Math.random(), axios.get() axios(비동기) ]
     - 밖에 있는 변수에 의존하는 것도 안된다. 
+
+
+### 3. 리덕스 사용할 준비하기
+
+1. import { createStore } from 'redux'
+   - createStore : 스토어 만들어주는 함수 
+2. 리덕스에서 관리할 상태를 정의해 준다 (상태 초기값)
+   - cosnt initialState = { conter : 0, text : '', list: []}   
+3. 액션타입 정의(액션타입 상수정의 ) 
+   - 액션타입은 주로 대문자로 작성한다.
+4. 액션생성함수정의
+   - 주로 camelCase로 작성 액션 객체에는 type값이 필수!!
+5. 리듀서 작성
+    - 액션 생성함수를 통해 만들어진 객체를 참조하여 새로운 상태를 만드는 함수를 만든다
+    - 리듀서에서는 불변성을 꼭 지켜줘야 한다
+    - state = initialState 초기값 설정
+6. 스토어 만들기
+    - const store = createStore(reducer); 현재 store안에 있는 초기상태 조회
+7. 구독 
+    - 스토어 안에 들어가있는 상태 바뀔때마다 호출되는 listener 함수
+    - 구독해제 하고 싶을 때 : unsubscribe(); 호출
+8. 디스패치 
+    - 액션이 디스패치 될 때마다 상태가 바뀌고 콘솔에 출력되는 것 확인
