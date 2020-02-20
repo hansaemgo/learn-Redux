@@ -105,3 +105,12 @@
     1. 회색 : 렌더링 되지 않음
     2. 노란색 & 주황색 & 초록색: 렌더링 되었음 (초록색은 렌더링 빠름)
 -   ex) 현재 TodoList 와 TodoItem은 리렌더링 될 필요가 없으므로 최적화 하는 것이 좋음
+
+### 9. useSelector 최적화
+
+-   state를 파라미터로 가져오는 과정에서 매번 새로운 객체를 만들고 있기때문에 리렌더링 된다
+
+1. useSlector 를 여려번
+    - const number = useSelector((state) => state.counter.number);
+    - const diff = useSelector((state) => state.counter.diff);
+2. equalityfn : 이전과 다음 비교 => shallowEqual
