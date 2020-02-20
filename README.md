@@ -90,3 +90,10 @@
     - yarn add redux-devtools-extension
     - index.js 수정
     - composeWithDevTools 추가
+
+### 7. 할 일 목록 구현
+
+-   프리젠테이셔널 컴포넌트 구현 ( TodoItem, TodoList, Todos )
+-   여러가지 컴포넌트를 만드는 이유 : 컴포넌트의 리렌더링 성능 최적화
+-   컨테이너 컴포넌트 구현 (TodosContainer.js)
+-   e.preventDefault(); // Submit 이벤트 발생했을 때 새로고침 방지
