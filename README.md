@@ -114,3 +114,10 @@
     - const number = useSelector((state) => state.counter.number);
     - const diff = useSelector((state) => state.counter.diff);
 2. equalityfn : 이전과 다음 비교 => shallowEqual
+
+### 10. HOC 함수(connect함수)
+
+-   connect 함수 : 컨테이너 컴포넌트를 만드는 또다른 방법(보통 클래스형태에서 사용)
+-   HOC : Higher-Order Component
+-   함수형 컴포넌트에서는 connect를 사용하지 않는다
+-   mapStateToProps의 파라미터 ownProps, mergeProps, options
