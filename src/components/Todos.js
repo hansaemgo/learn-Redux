@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toggleTodo } from '../modules/todos';
 
-function TodoItem({ todo, onToggle }) {
+const TodoItem = React.memo(function TodoItem({ todo, onToggle }) {
 	return (
 		<li
 			style={{ textDecoration: todo.done ? 'line-through' : 'none' }}
@@ -10,7 +10,7 @@ function TodoItem({ todo, onToggle }) {
 			{todo.text}
 		</li>
 	);
-}
+});
 
 const TodoList = React.memo(function TodoList({ todos, onToggle }) {
 	return (
@@ -46,4 +46,4 @@ function Todos({ todos, onCreate, onToggle }) {
 		</div>
 	);
 }
-export default Todos;
+export default React.memo(Todos);

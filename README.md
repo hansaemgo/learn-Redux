@@ -97,3 +97,11 @@
 -   여러가지 컴포넌트를 만드는 이유 : 컴포넌트의 리렌더링 성능 최적화
 -   컨테이너 컴포넌트 구현 (TodosContainer.js)
 -   e.preventDefault(); // Submit 이벤트 발생했을 때 새로고침 방지
+
+### 8. React.memo
+
+-   컴포넌트 최적화를 위하여 React.memo 를 사용한다
+-   React Dev Tools > Profiler > start profiling
+    1. 회색 : 렌더링 되지 않음
+    2. 노란색 & 주황색 & 초록색: 렌더링 되었음 (초록색은 렌더링 빠름)
+-   ex) 현재 TodoList 와 TodoItem은 리렌더링 될 필요가 없으므로 최적화 하는 것이 좋음
